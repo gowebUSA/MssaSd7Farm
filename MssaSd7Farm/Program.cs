@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace MssaSd7Farm
-{
+{//ref: guru99.com/c-sharp-class-object.html
     class Horse
     {
         string horseName;
