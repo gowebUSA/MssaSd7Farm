@@ -2,17 +2,35 @@
 
 namespace MssaSd7Farm
 {//ref: guru99.com/c-sharp-class-object.html
-    class Horse
+    public class Horse
     {
-        string horseName;
-        string horseSpeak;
-        int horseLegs;
-        public void SetHorse(string hrName, string hrSpeak, int hrLegs)
-        {
-            horseName = hrName;
-            horseSpeak = hrSpeak;
-            horseLegs = hrLegs;
+        //Make properties for EX 10A C^N ---------------------------------------------------------------------
+        //string horseName;
+        //string horseSpeak;
+        //int horseLegs;
+        //public void SetHorse(string hrName, string hrSpeak, int hrLegs)
+        //{
+        //    horseName = hrName;
+        //    horseSpeak = hrSpeak;
+        //    horseLegs = hrLegs;
 
+        //}
+        private string horseName;
+        private string horseSpeak;
+        private int horseLegs = 4;
+        public string SetHorseName 
+            { 
+            get => this.horseName; 
+            set => this.horseName = value; 
+            }
+        public string SetHorseSpeak
+        {
+            get => this.horseSpeak;
+            set => this.horseSpeak = value;
+        }
+        public int SetHorseLegs
+        {
+            get => this.horseLegs;
         }
         public string GetHorseName()
         {
@@ -119,9 +137,19 @@ namespace MssaSd7Farm
                 );
         }
         {
-            Horse mrEd = new Horse();
-            mrEd.SetHorse("Mr. Ed", "neighehehee", 4);
-            Console.WriteLine(
+                //EX 10A C^N----------------------------------------------------------------------------------
+                //Horse mrEd = new Horse();
+                //mrEd.SetHorseName = "Mr. Ed";
+                //mrEd.SetHorseSpeak = "neighehehee";
+                //mrEd.SetHorseLegs = 4;
+                //Simplified
+                Horse mrEd = new Horse
+                {
+                    SetHorseName = "Mr. Ed",
+                    SetHorseSpeak = "neighehehee",
+                    //GetHorseLegs() is read only.
+                };
+                Console.WriteLine(
                 $"{mrEd.GetHorseName()} is a racing horse that {mrEd.GetHorseSpeak()} when he runs and has {mrEd.GetHorseLegs()} legs.\n"
                 );
         }
